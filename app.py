@@ -88,6 +88,7 @@ if st.sidebar.button("Reset"):
     st.experimental_rerun()
 
 # Instructions
-st.write("Enter a system prompt (optional) and a user prompt in the sidebar, then click 'Query Chatbot' to get a response from the LLM.")
+st.write("Enter a system prompt (optional) and a user prompt in the sidebar, then click 'Submit' to get a response from the LLM.")
 st.write("Alternatively, you can upload a text or PDF file to use its content as the prompt.")
 st.write("Model: llama3-8b-8192")
+st.info('build by DW v1') #v6
