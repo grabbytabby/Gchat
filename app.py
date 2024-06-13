@@ -1,5 +1,5 @@
 import os
-import fitz  # PyMuPDF
+import pdfplumber
 import streamlit as st
 from groq import Groq
 
@@ -29,11 +29,10 @@ def read_uploaded_text(file):
 
 # Function to read the contents of the uploaded PDF file
 def read_uploaded_pdf(file):
-    pdf_document = fitz.open(stream=file.read(), filetype="pdf")
     text = ""
-    for page_num in range(pdf_document.page_count):
-        page = pdf_document[page_num]
-        text += page.get_text()
+    with pdfplumber.open(file) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text()
     return text
 
 # Read the content of the uploaded file, if any
