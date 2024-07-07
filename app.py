@@ -9,7 +9,7 @@ client = Groq(
 )
 
 # Streamlit app
-st.image("face.PNG", width=280)
+st.image("face.png", width=280)
 st.title("Welcome to GChat AI")
 
 # Sidebar
